@@ -1,15 +1,17 @@
-# Multi-Language Central Logging with Graylog
+# Central Logging with Graylog
 
-Multi-Language central logging with Graylog
+Central logging with Graylog and examples in Dotnet, Golang, NodeJS
 
 ## Run Project
 
 1. Run docker compose:
+
 ```sh
 docker-compose up -d
 ```
 
 2. Open [Graylog on browser](http://localhost:9000) (admin:admin) and Create 'Gelf TCP' Input. Input properties must look like below:
+
 ```sh
 bind_address: 0.0.0.0
 decompress_size_limit: 8388608
