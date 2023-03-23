@@ -35,3 +35,9 @@ Dotnet Console:
 cd apps/dotnet-console
 dotnet run
 ```
+
+Dotnet WebAPI:
+```sh
+cd apps/dotnet-webapi
+dotnet run
+```

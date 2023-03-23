@@ -1,7 +1,6 @@
-﻿using System;
-using Microsoft.Extensions.Configuration;
 using Serilog;
-using Serilog.Core;
+
+var builder = WebApplication.CreateBuilder(args);
 
 //==================================================================\\
 //=================== Serilog Settings =============================\\
@@ -13,13 +12,29 @@ IConfiguration Configuration = new ConfigurationBuilder()
 	.AddCommandLine(args)
 	.Build();
 
-Log.Logger = new LoggerConfiguration()
+var logger = new LoggerConfiguration()
 	.ReadFrom.Configuration(Configuration)
 	.CreateLogger();
+
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
 //==================================================================\\
 //==================================================================\\
 
-Log.Debug("Console - Debug Message");
-Log.Information("Console - Info Message");
-Log.Warning("Console - Warning Message");
-Log.Error("Console - Error Message");
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+	app.UseSwagger();
+	app.UseSwaggerUI();
+}
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();
