@@ -43,3 +43,9 @@ Dotnet WebAPI:
 cd apps/dotnet-webapi
 dotnet run
 ```
+
+Golang Console:
+```sh
+cd apps/golang-console
+go run main.go
+``` 
