@@ -49,3 +49,9 @@ Golang Console:
 cd apps/golang-console
 go run main.go
 ``` 
+
+NodeJS Console:
+```sh
+cd apps/nodejs-console
+npm start
+``` 
