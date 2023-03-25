@@ -10,7 +10,7 @@ Central logging with Graylog and examples in Dotnet, Golang, NodeJS
 docker-compose up -d
 ```
 
-2. Open [Graylog on browser](http://localhost:9000) (admin:admin) and Create 'Gelf TCP' Input. Input properties must look like below:
+2. Open [Graylog on browser](http://localhost:9000) (username: admin, password: password1234567890) and Create 'Gelf TCP' Input. Input properties must look like below:
 
 ```sh
 bind_address: 0.0.0.0
